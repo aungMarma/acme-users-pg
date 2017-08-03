@@ -1,0 +1,15 @@
+{% extends './layout.html' %}
+{% block content %}
+<h2>Home</h2>
+
+<form class='well' method='post' action='/users'>
+  <div class='form-group'>
+    <input class='form-control' name='name' placeholder='user name' />
+  </div>
+  <div class='form-group'>
+      <input class="form-control" name="manager" type="checkbox" /> is Manager?
+      <button class='btn btn-primary'>Save</button>
+  </div>
+</form>
+
+{% endblock %}

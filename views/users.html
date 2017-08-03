@@ -1,0 +1,20 @@
+{% extends './layout.html' %}
+{% block content %}
+<h1>Users</h1>
+      <ul class="form-group">
+        {% for user in users %}
+        <li class="well">
+            {{ user.name }} is a {{user.status}}
+           {% if user.status === "manager" %} 
+             <form method='POST' action='/users/users/managers/{{user.id}}?_method=DELETE'>
+                <button>Delete as Manager</button>
+              </form>
+
+           {% endif %}
+            <form method='POST' action='/users/users/{{user.id}}?_method=DELETE'>
+                <button>Delete User</button>
+            </form>
+        </li>
+        {% endfor %}
+      </ul>
+{% endblock %}

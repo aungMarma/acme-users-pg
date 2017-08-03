@@ -1,0 +1,15 @@
+{% extends './layout.html' %}
+{% block content %}
+<h1>Managers</h1>
+      <ul class="form-group">
+        {% for user in users %}
+        <li class="well">
+            {{ user.name }}
+            <form method='POST' action='/users/managers/{{user.id}}?_method=DELETE'>
+                <button>Romove as Manager</button>
+            </form>
+        </li>
+        {% endfor %}
+      </ul>
+{% endblock %}
+
